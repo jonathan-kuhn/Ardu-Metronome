@@ -101,6 +101,16 @@ void displaybpm()
   display.println("BPM is " + String(bpm));
   display.display();
 }
+
+
+// Variables will change:
+int ledState = LOW;  // ledState used to set the LED
+
+// Generally, you should use "unsigned long" for variables that hold time
+// The value will quickly become too large for an int to store
+unsigned long previousMillis = 0;  // will store last time LED was updated
+
+
 void setup()
 {
   pinMode(led1, OUTPUT);
@@ -145,31 +155,29 @@ void setup()
 
   // Invert and restore display, pausing in-between
 }
+int counter = 0;
+void loop() {
+  delay(10);
+  unsigned long currentMillis = millis();
+  if (currentMillis - previousMillis >= 60*500/bpm) {
+    // save the last time you blinked the LED
+    previousMillis = currentMillis;
 
-void loop()
-{
-  myTime = millis();
-  //Serial.println(digitalRead(button1));
-  for (int i = 0; i<beats; i++) {
-    if (i == 0) {
-      digitalWrite(led1, HIGH);
-      delay(60*1000/bpm/10);
-      digitalWrite(led1, LOW);
+    // if the LED is off turn it on and vice-versa:
+    if (ledState == LOW) {
+      ledState = HIGH;
+    } else {
+      ledState = LOW;
     }
-    else {
-      digitalWrite(led2, HIGH);
-      delay(60*1000/bpm/10);
-      digitalWrite(led2, LOW);
+    if (counter < 2) {
+      digitalWrite(led1, ledState);
+    } else {
+      digitalWrite(led2, ledState);
     }
-  if (digitalRead(button1) == LOW) {
-    bpm--;
-  }
-  if (digitalRead(button2) == LOW) {
-    bpm++;
-  }
-  displaybpm();
-
-    delay(60*9*1000/bpm/10);
-
+    counter++;
+    if (counter > 7) {
+      counter = 0;
+    }
+    Serial.println(counter);
   }
 }
