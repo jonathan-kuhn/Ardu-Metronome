@@ -155,11 +155,23 @@ void setup()
 
   // Invert and restore display, pausing in-between
 }
+
 int counter = 0;
+unsigned long lastPress = 0;
+
 void loop() {
-  delay(10);
+  delay(20);
   unsigned long currentMillis = millis();
-  if (currentMillis - previousMillis >= 60*500/bpm) {
+  if (digitalRead(button1) == LOW && currentMillis - lastPress >= 100) {
+    bpm--;
+    lastPress = millis();
+  }
+  if (digitalRead(button2) == LOW && currentMillis - lastPress >= 100) {
+    bpm++;
+    lastPress = millis();
+  }
+  displaybpm();
+  if (currentMillis - previousMillis >= (60*500/bpm)-10) {
     // save the last time you blinked the LED
     previousMillis = currentMillis;
 
@@ -175,7 +187,7 @@ void loop() {
       digitalWrite(led2, ledState);
     }
     counter++;
-    if (counter > 7) {
+    if (counter == 8) {
       counter = 0;
     }
     Serial.println(counter);
