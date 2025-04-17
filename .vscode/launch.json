@@ -12,9 +12,9 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug",
-            "executable": "/home/jonathan-kuhn/Dokumente/PlatformIO/Projects/Ardu-Metronome/.pio/build/arduino_nano_esp32/firmware.elf",
-            "projectEnvName": "arduino_nano_esp32",
-            "toolchainBinDir": "/home/jonathan-kuhn/.platformio/packages/toolchain-xtensa-esp32s3/bin",
+            "executable": "/home/jonathan-kuhn/Documents/PlatformIO/Projects/Ardu-Metronome/.pio/build/esp8266/firmware.elf",
+            "projectEnvName": "esp8266",
+            "toolchainBinDir": "/home/jonathan-kuhn/.platformio/packages/toolchain-xtensa/bin",
             "internalConsoleOptions": "openOnSessionStart",
             "preLaunchTask": {
                 "type": "PlatformIO",
@@ -25,18 +25,18 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (skip Pre-Debug)",
-            "executable": "/home/jonathan-kuhn/Dokumente/PlatformIO/Projects/Ardu-Metronome/.pio/build/arduino_nano_esp32/firmware.elf",
-            "projectEnvName": "arduino_nano_esp32",
-            "toolchainBinDir": "/home/jonathan-kuhn/.platformio/packages/toolchain-xtensa-esp32s3/bin",
+            "executable": "/home/jonathan-kuhn/Documents/PlatformIO/Projects/Ardu-Metronome/.pio/build/esp8266/firmware.elf",
+            "projectEnvName": "esp8266",
+            "toolchainBinDir": "/home/jonathan-kuhn/.platformio/packages/toolchain-xtensa/bin",
             "internalConsoleOptions": "openOnSessionStart"
         },
         {
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (without uploading)",
-            "executable": "/home/jonathan-kuhn/Dokumente/PlatformIO/Projects/Ardu-Metronome/.pio/build/arduino_nano_esp32/firmware.elf",
-            "projectEnvName": "arduino_nano_esp32",
-            "toolchainBinDir": "/home/jonathan-kuhn/.platformio/packages/toolchain-xtensa-esp32s3/bin",
+            "executable": "/home/jonathan-kuhn/Documents/PlatformIO/Projects/Ardu-Metronome/.pio/build/esp8266/firmware.elf",
+            "projectEnvName": "esp8266",
+            "toolchainBinDir": "/home/jonathan-kuhn/.platformio/packages/toolchain-xtensa/bin",
             "internalConsoleOptions": "openOnSessionStart",
             "loadMode": "manual"
         }
